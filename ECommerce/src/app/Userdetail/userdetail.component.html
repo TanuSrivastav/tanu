@@ -1,0 +1,40 @@
+<table>
+    <tr>
+        <td>UserId</td>
+        <td>
+            <input [(ngModel)]="UserdetailModel.UserId" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>UserName</td>
+        <td>
+            <input [(ngModel)]="UserdetailModel.UserName" type="text">
+        </td>
+    </tr>
+    <tr>
+
+    <input type="submit" (click)="UserName()">
+    <input type="button" (click)="getData()" value="getData"/>
+</table>
+<!-- {{UserdetailModel.id}}
+{{UserdetailModel.UserId}}
+{{UserdetailModel.UserUserName}} -->
+
+<table border="2">
+    <tr>
+        <td>Userdetail UserId</td>
+        <td>Userdetail UserName</td>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let item of UserdetailModel">
+        <td>
+        <td> {{item.UserId}}
+        </td>
+        <td> {{item.UserName}}
+        </td>
+        <td>
+            <input type="button" value="Edit" (click)="EditUserdetail(item)" />
+            <input type="button" value="Delete" (click)="DeleteUserdetail(item)" />
+        </td>
+    </tr>
+</table>
